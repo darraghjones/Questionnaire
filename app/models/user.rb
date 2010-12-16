@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :answers
 
+  def after_initialize 
+  class_eval do
+
   Question.all.each do |q|
     define_method q.code do
       #a = answers.find_by_question_id(q.id)
@@ -13,6 +16,9 @@ class User < ActiveRecord::Base
       a.value = value
       a.save
     end
+  end
+
+  end
   end
 
 end
