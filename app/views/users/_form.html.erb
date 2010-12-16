@@ -24,7 +24,24 @@
   </div>
  
   <%end%> 
+
+  <div class="field">
+    Are you male or female?
+    <%=f.radio_button :sex, "male" %>
+    <%=f.label :sex_male, "male" %>
+    <%=f.radio_button :sex, "female" %>
+    <%=f.label :sex_female, "female" %>
+  </div>
   
+  <div class="field">
+    How many children do you have?
+    <%=f.select :num_children, [['none', 0], ['one', 1], ['two', 2]] %>
+  </div>
+  <div class="field">
+    <%=f.label :terms, "Do you agree to terms and conditions? " %>
+    <%=f.check_box :terms %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
